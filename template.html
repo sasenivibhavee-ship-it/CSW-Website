@@ -4,52 +4,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSW Project Template</title>
-    <!-- Link to the global CSS file -->
-    <link rel="stylesheet" href="style.css">
+    <title>HEALIX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /*Color Palette*/
+        :root {
+            --frosted-blue: #7BDFF2;
+            --icy-aqua: #B2F7EF;
+            --mint-cream: #EFF7F6;
+            --petal-frost: #F7D6E0;
+            --blush-pop: #F2B5D4;
+            --text-dark: #16363b;
+            --text-mid: #3d6b72;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(150deg, var(--mint-cream) 0%, var(--icy-aqua) 60%, var(--petal-frost) 100%);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: var(--mint-cream);
+            padding: 10px 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            /* logo left, nav right */
+            align-items: center;
+            /* vertical alignment */
+        }
+
+        .branding {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo {
+            height: 60px;
+        }
+
+        .companyname {
+            font-size: 1.7rem;
+            color: var(--text-dark);
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            background: linear-gradient(120deg, var(--frosted-blue) 0%, var(--blush-pop) 100%);
+            -webkit-background-clip: text;
+            /* clip background to text */
+            -webkit-text-fill-color: transparent;
+            /* make text transparent so gradient shows */
+            background-clip: text;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-mid);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.25s ease;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            padding-bottom: 4px;
+        }
+
+        .nav-link.active {
+            color: var(--text-dark);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--frosted-blue), var(--blush-pop));
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--frosted-blue);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+            /*create the underline*/
+        }
+
+        /* ===== CSS-Only Mobile Menu ===== */
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-label {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            z-index: 1100;
+        }
+
+        #icon-x {
+            display: none;
+        }
+
+        #icon-bars {
+            display: block;
+        }
+
+        #menu-toggle:checked+.menu-label #icon-bars {
+            display: none;
+        }
+
+        #menu-toggle:checked+.menu-label #icon-x {
+            display: block;
+        }
+
+        @media(max-width:768px) {
+            .menu-label {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--mint-cream);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2.5rem;
+                transition: right 0.35s ease;
+                z-index: 1000;
+
+            }
+
+            #menu-toggle:checked~* .nav-links,
+            #menu-toggle:checked+.menu-label+.nav-links {
+                right: 0;
+            }
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2e8fa0, #5e6b9e);
+            padding: 2.5rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            color: var(--mint-cream);
+        }
+
+        footer .social_icon,
+        footer .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 0.6rem;
+        }
+
+        .social_icon li a {
+            color: var(--mint-cream);
+            font-size: 25px;
+        }
+
+        .social_icon li a:hover {
+            color: var(--blush-pop);
+        }
+
+        .menu li a {
+            font-size: 16px;
+            color: var(--mint-cream);
+            text-decoration: none;
+            padding-right: 20px;
+        }
+
+        .menu li a:hover {
+            color: var(--blush-pop);
+        }
+
+        footer p {
+            font-size: 15px;
+            color: var(--mint-cream);
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header with website identity/logo and navigation -->
     <header>
         <nav class="navigation">
-            <div class="nav-bar">
-                <div class="nav-logo">
-                    <img src="logo.png">
+            <div class="nav-container">
+
+                <div class="branding">
+                    <img src="logo.png" class="nav-logo" alt="HEALIX Logo">
+                    <h1 class="companyname">HEALIX</h1>
                 </div>
 
+                <input type="checkbox" id="menu-toggle">
+                <label class="menu-label" for="menu-toggle">
+                    <i class="fas fa-bars" id="icon-bars"></i>
+                    <i class="fas fa-xmark" id="icon-x"></i>
+                </label>
+
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="splash.html">Splash</a></li>
-                    <li><a href="ais.html">AIS</a></li>
-                    <li><a href="feedback.html">Feedback</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="ais.html" class="nav-link">AIS</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="profile.html" class="nav-link">User Profile</a></li>
+                    <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+                    <li><a href="team.html" class="nav-link">Team</a></li>
+                    <li><a href="sitemap.html" class="nav-link">Sitemap</a></li>
                 </ul>
-                <div class="toggle_btn">
-                    <i class="fa-regular fa-bars"></i>
-                </div>
+
             </div>
         </nav>
     </header>
-
-    <!-- Main content area -->
     <main>
-        <h2>Welcome to Our Project</h2>
-        <p>This is the shared template. Replace this section with your page-specific content.</p>
-    </main>
 
-    <!-- Footer with required links -->
-    <footer>
-        <p>
-            <a href="pageEditor_ST1.html">Page Editor</a> |
-            <a href="validation_ST1.html">Validation</a> |
-            Student 1 Details |
-            <a href="accessibility.html">Accessibility</a>
-        </p>
-    </footer>
+        <!--- Code Here -->
+
+    </main>
 </body>
+
+<footer>
+    <ul class="social_icon">
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+
+    <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="ais.html">AIS</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="profile.html">User Profile</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+    </ul>
+    <p>&copy; 2026 HEALIX &mdash; All Rights Reserved</p>
+</footer>
 
 </html>
