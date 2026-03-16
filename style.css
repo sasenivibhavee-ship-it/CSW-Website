@@ -46,19 +46,20 @@ header {
 .branding {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .nav-logo {
     height: 60px;
+    padding-left: 40px;
 }
 
 .companyname {
-    font-size: 1.7rem;
+    font-size: 40px;
     color: var(--text-dark);
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    background: linear-gradient(120deg, var(--frosted-blue) 0%, var(--blush-pop) 100%);
+    background: linear-gradient(120deg, #176087 0%, var(--blush-pop) 100%);
     -webkit-background-clip: text;
     /* clip background to text */
     -webkit-text-fill-color: transparent;
@@ -71,6 +72,7 @@ header {
     display: flex;
     align-items: center;
     gap: 2.5rem;
+    padding-right: 160px;
 
 }
 
@@ -78,7 +80,7 @@ header {
     text-decoration: none;
     color: var(--text-mid);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 18px;
     position: relative;
     transition: color 0.25s ease;
     letter-spacing: 0.02em;
