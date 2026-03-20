@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Clinics & Community Healthcare | HealthForAll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&family=Mansalva&display=swap"
+        rel="stylesheet">
+    <style>
+        .hero-banner {
+            background: linear-gradient(150deg, #B2F7EF 0%, #16363b 30%, #3d6b72 40%, #16363b 75%, #B2F7EF 100%);
+            text-align: center;
+            padding: 20px;
+            color: #EFF7F6;
+            border-radius: 12px;
+            padding-bottom: 40px;
+            padding-top: 40px;
+        }
+
+        .sdg-badge {
+            background: #EFF7F6;
+            color: #3d6b72;
+            padding: 6px;
+            padding-right: 10px;
+            padding-left: 10px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .topic {
+            padding: 3px;
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        .content-page {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+
+        .page-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            align-items: start;
+            gap: 2rem;
+            margin-top: 20px;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            font-weight: 550;
+            color: #EFF7F6;
+        }
+
+        aside {
+            align-self: start;
+            position: sticky;
+            top: 90px;
+        }
+
+        .side-nav {
+            width: 250px;
+            background: #EFF7F6;
+            border-radius: 20px;
+            padding: 20px 20px;
+            margin-top: 20px;
+        }
+
+        .side-nav ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .side-nav-header {
+            font-size: 22px;
+            padding-bottom: 5px;
+            color: #3d6b72;
+            text-align: center;
+        }
+
+        .sidenav-line {
+            border: 1px solid #3d6b72;
+        }
+
+        .circle {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            border-radius: 50%;
+            background: #3d6b72;
+            color: #fff;
+            text-align: center;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .side-nav ol li a {
+            font-size: 18px;
+            text-align: left;
+            gap: 5px;
+            padding: 5px;
+            font-weight: 550;
+            text-decoration: none;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            color: #3d6b72;
+        }
+
+        .side-nav ol li a:hover {
+            background-color: #99eec0;
+        }
+
+        .section-card {
+            text-align: justify;
+            padding-right: 30px;
+            padding-top: 20px;
+            padding-left: 30px;
+            font-size: 19px;
+            background-color: #EFF7F6;
+            border-radius: 15px;
+            border: 2px solid #3d6b72;
+            box-shadow: #3d6b72;
+            margin-bottom: 10px;
+        }
+
+        .section-card h2 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 25px;
+            color: #16363b;
+            text-decoration: underline;
+        }
+
+        p {
+            color: #3d6b72;
+            font-size: 17px;
+            margin-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        #image {
+            width: 470px;
+            height: 330px;
+            display: block;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        .img-caption {
+            font-size: 15px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .stat-box {
+            background-color: #F7D6E0;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            color: #16363b;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(15, 15, 15, 0.2);
+        }
+
+        .stat-num {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        .stat-label {
+            color: #3d6b72;
+        }
+
+        .row-1 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .row-2 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .service-item {
+            background-color: #F7D6E0;
+            color: #16363b;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            margin-left: 40px;
+            margin-right: 40px;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(15, 15, 15, 0.2);
+            margin-top: 20px;
+        }
+
+        .img-pair {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+
+        .section4-img {
+            width: 480px;
+            height: 320px;
+            border-radius: 10px;
+        }
+
+        .ul-list {
+            margin-left: 50px;
+            color: #3d6b72;
+        }
+
+        .ul-list li {
+            margin-bottom: 10px;
+        }
+
+        .callout {
+            background-color: #F7D6E0;
+            padding-left: 30px;
+            border-left: 5px solid #16363b;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(15, 15, 15, 0.2);
+        }
+
+        .callout span {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .action-list {
+            padding-left: 40px;
+            padding-right: 40px;
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+
+        .action-list hr {
+            border-color: #3d6b72;
+            opacity: 20%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navigation">
+            <div class="nav-container">
+
+                <div class="branding">
+                    <img src="logo.png" class="nav-logo" alt="HEALIX Logo">
+                    <h1 class="companyname">HEALIX</h1>
+                </div>
+
+                <input type="checkbox" id="menu-toggle">
+                <label class="menu-label" for="menu-toggle">
+                    <i class="fas fa-bars" id="icon-bars"></i>
+                    <i class="fas fa-xmark" id="icon-x"></i>
+                </label>
+
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="ais.html" class="nav-link">AIS</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="profile.html" class="nav-link">User Profile</a></li>
+                    <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+                    <li><a href="team.html" class="nav-link">Team</a></li>
+                    <li><a href="sitemap.html" class="nav-link">Sitemap</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="content-page">
+            <div class="hero-banner">
+                <span class="sdg-badge">SDG 3 : Good Health & Well-Being</span>
+                <h1 class="topic">Free Clinics & Community Healthcare</h1>
+                <p class="hero-sub">How free medical clinics are bridging the healthcare gap, saving lives, and
+                    empowering
+                    communities and how you can help.</p>
+            </div>
+
+            <div class="page-layout">
+                <aside>
+                    <nav class="side-nav">
+                        <h2 class="side-nav-header">Contents</h2>
+                        <hr class="sidenav-line">
+                        <ol>
+                            <li><a href="#what-are-free-clinics"><span class="circle">1</span>What Are Free Clinics?</a>
+                            </li>
+                            <li><a href="#why-they-matter"><span class="circle">2</span>Why They Matter</a></li>
+                            <li><a href="#services-offered"><span class="circle">3</span>Services Offered</a></li>
+                            <li><a href="#global-impact"><span class="circle">4</span>Global Impact</a></li>
+                            <li><a href="#how-to-get-involved"><span class="circle">5</span>Get Involved</a></li>
+                            <li><a href="#student-role"><span class="circle">6</span>Student Role</a></li>
+                            <li><a href="#challenges"><span class="circle">7</span>Challenges Faced</a></li>
+                            <li><a href="#sdg-connection"><span class="circle">8</span>SDG 3 Connection</a></li>
+                        </ol>
+                    </nav>
+                </aside>
+
+                <div class="main-content">
+                    <!-- ── SECTION 1: What Are Free Clinics? ── -->
+                    <section class="section-card" id="what-are-free-clinics">
+                        <h2 id="subtopic1">
+                            <svg class="section-icon" width="32" height="32">
+                                <circle cx="16" cy="16" r="16" fill="#EFF7F6" />
+                                <rect x="13" y="7" width="6" height="18" rx="3" fill="#3d6b72" />
+                                <rect x="7" y="13" width="18px" height="6px" rx="3px" fill="#3d6b72" />
+                            </svg>
+                            What Are Free Clinics?
+                        </h2>
+                        <div class="section-divider">
+                            <p>
+                                A <strong>free clinic</strong> is a healthcare facility that provides medical,
+                                dental,
+                                and
+                                mental health services at no charge — or at a significantly reduced cost — to
+                                individuals
+                                who
+                                cannot afford traditional healthcare. They operate primarily through the dedication
+                                of
+                                volunteer
+                                doctors, nurses, pharmacists, and administrative staff, supported by charitable
+                                donations
+                                and
+                                community partnerships.
+                            </p>
+                            <p>
+                                Unlike emergency rooms or government hospitals, free clinics specialise in
+                                <em>preventive</em>
+                                and <em>primary care</em>: routine check-ups, chronic disease management,
+                                vaccinations,
+                                and
+                                early diagnosis — all of which are crucial for keeping people healthy before a
+                                condition
+                                becomes
+                                life-threatening.
+                            </p>
+                            <img src="Community health clinic.png" id="image">
+                            <p class="img-caption">Illustration: A community free clinic welcoming patients
+                                regardless
+                                of
+                                financial situation.</p>
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- ── SECTION 2: Why They Matter ── -->
+                    <section class="section-card" id="why-they-matter">
+                        <h2 id="subtopic2">
+                            <svg class="section-icon" width="32" height="32">
+                                <circle cx="16" cy="16" r="16" fill="#EFF7F6" />
+                                <rect x="13" y="7" width="6" height="18" rx="3" fill="#3d6b72" />
+                                <rect x="7" y="13" width="18px" height="6px" rx="3px" fill="#3d6b72" />
+                            </svg>
+                            Why They Matter
+                        </h2>
+                        <div class="section-divider"></div>
+
+                        <p>
+                            Access to healthcare is not equal. Across the world — and even within wealthy nations —
+                            millions
+                            of
+                            people fall into a gap: they earn too much to qualify for government assistance but far too
+                            little
+                            to
+                            afford private insurance or out-of-pocket medical costs. For these individuals and families,
+                            a
+                            free
+                            clinic can be the <strong>only</strong> point of medical contact they have.
+                        </p>
+
+
+                        <div class="stat-row">
+                            <div class="stat-box">
+                                <span class="stat-num">2B+</span>
+                                <span class="stat-label">People lack access to essential health services globally
+                                    (WHO)</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-num">1,400+</span>
+                                <span class="stat-label">Free clinics operating in the United States alone (NAFC)</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-num">£0</span>
+                                <span class="stat-label">Cost to patients — free at point of care, always</span>
+                            </div>
+                        </div>
+
+                        <h4>The Consequences of Untreated Conditions</h3>
+                            <p>
+                                When people cannot afford to see a doctor, minor conditions escalate into serious,
+                                costly,
+                                and
+                                sometimes
+                                fatal illnesses. High blood pressure left unchecked leads to strokes. Unmanaged diabetes
+                                leads
+                                to
+                                amputations. Mental health issues without support spiral into crises. Free clinics
+                                interrupt
+                                this
+                                cycle
+                                by providing <strong>early, consistent, compassionate care</strong>.
+                            </p>
+
+                            <div class="callout">
+                                "Healthcare is not a privilege. It is a human right. Free clinics exist to remind us
+                                that
+                                the
+                                system
+                                can
+                                choose to be better — and that individuals can make that choice happen today."
+                                <span>—<em> Dr. A. Patel, Volunteer Physician, London Free Clinic Project </em>—</span>
+                            </div>
+
+                            <img src="Volunteer doctor.png" id="image" />
+                            <p class="img-caption">A volunteer physician consulting a patient — one of thousands helped
+                                each
+                                week at
+                                free clinics worldwide.</p>
+                    </section>
+
+                    <!-- ── SECTION 3: Services Offered ── -->
+                    <section class="section-card" id="services-offered" aria-labelledby="h-services">
+                        <h2 id="subtopic3">
+                            <svg class="section-icon" width="32" height="32">
+                                <circle cx="16" cy="16" r="16" fill="#EFF7F6" />
+                                <rect x="13" y="7" width="6" height="18" rx="3" fill="#3d6b72" />
+                                <rect x="7" y="13" width="18px" height="6px" rx="3px" fill="#3d6b72" />
+                            </svg>
+                            Services Offered at Free Clinics
+                        </h2>
+                        <div class="section-divider"></div>
+
+                        <p>
+                            Free clinics offer a surprisingly wide range of medical services, often comparable to a
+                            standard GP practice. The exact services vary by location and volunteer capacity, but most
+                            well-established free clinics provide the following:
+                        </p>
+
+                        <div class="services-grid">
+                            <div class="row-1">
+                                <div class="service-item">
+                                    <h4>General Check-ups</h4>
+                                </div>
+                                <div class="service-item">
+                                    <h4>Chronic Disease Management</h4>
+                                </div>
+                                <div class="service-item">
+                                    <h4>Vaccinations</h4>
+                                </div>
+                            </div>
+                            <div class="row-2">
+                                <div class="service-item">
+                                    <h4>Mental Health Support</h4>
+                                </div>
+                                <div class="service-item">
+                                    <h4>Free Prescriptions</h4>
+                                </div>
+                                <div class="service-item">
+                                    <h4>Dental Care</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Who Qualifies?</h4>
+                        <p>
+                            Most free clinics operate on a <strong>self-referral basis</strong> — meaning you do not
+                            need a GP's letter or prior appointment in many cases. Eligibility is typically based on
+                            income level or lack of insurance, but some clinics serve anyone in the community regardless
+                            of status, including undocumented individuals, students, and the homeless.
+                        </p>
+                    </section>
+
+                    <!-- ── SECTION 4: Global Impact ── -->
+                    <section class="section-card" id="global-impact" aria-labelledby="h-impact">
+                        <h2 id="subtopic4">
+                            <svg class="section-icon" width="32" height="32">
+                                <circle cx="16" cy="16" r="16" fill="#EFF7F6" />
+                                <rect x="13" y="7" width="6" height="18" rx="3" fill="#3d6b72" />
+                                <rect x="7" y="13" width="18px" height="6px" rx="3px" fill="#3d6b72" />
+                            </svg>
+                            Global Impact
+                        </h2>
+                        <div class="section-divider"></div>
+
+                        <div class="img-pair">
+                            <div>
+                                <img class="section4-img" src="Healthcare workers.png" />
+                                <p class="img-caption">Mobile free clinics reach rural and remote communities.</p>
+                            </div>
+                            <div>
+                                <img class="section4-img" src="Children receiving treatments.png" />
+                                <p class="img-caption">Free vaccination drives protect children in underserved areas.
+                                </p>
+                            </div>
+                        </div>
+
+                        <p>
+                            Free clinics are not just a feature of wealthy Western nations — they are a global movement.
+                            From mobile medical vans in rural Sri Lanka to student-run free clinics in the United
+                            States, the model proves that <strong>compassion + organisation = healthcare
+                                access</strong>.
+                        </p>
+
+                        <h4>Notable Examples Around the World</h4>
+                        <ul class="ul-list">
+                            <li><strong>USA - National Association of Free &amp; Charitable Clinics (NAFC):</strong>
+                                Over 1,400 member clinics providing care to 2 million+ patients annually, valued at over
+                                $1 billion in services.</li>
+                            <li><strong>UK - Doctors of the World:</strong> Runs free clinics in London, Manchester and
+                                Birmingham for migrants, homeless individuals, and those refused NHS care.</li>
+                            <li><strong>India - Jan Arogya Clinics:</strong> Government-partnered free primary care
+                                clinics serving millions of citizens in urban slums and rural villages.</li>
+                            <li><strong>Sri Lanka - Suwa Diviya Programme:</strong> Community health clinics offering
+                                free consultations and medication to low-income families across the country.</li>
+                        </ul>
+
+                        <div class="callout">
+                            🌍 In 2023, free and charitable clinics in the USA alone delivered over <strong>$1.5
+                                billion</strong> in donated healthcare services — powered almost entirely by volunteers.
+                        </div>
+                    </section>
+
+                    <!-- ── SECTION 5: How to Get Involved ── -->
+                    <section class="section-card" id="how-to-get-involved">
+                        <h2 id="subtopic5">
+                            <svg class="section-icon" width="32" height="32">
+                                <circle cx="16" cy="16" r="16" fill="#EFF7F6" />
+                                <rect x="13" y="7" width="6" height="18" rx="3" fill="#3d6b72" />
+                                <rect x="7" y="13" width="18px" height="6px" rx="3px" fill="#3d6b72" />
+                            </svg>
+                            How to Get Involved
+                        </h2>
+                        <div class="section-divider"></div>
+
+                        <p>
+                            Whether you are a healthcare student, a qualified professional, or simply someone who wants
+                            to make a difference — there is a meaningful role for you in the free clinic ecosystem. Here
+                            are practical steps you can take:
+                        </p>
+
+                        <ul class="action-list">
+                            <li>
+                                <span><strong>Volunteer your time</strong> — Healthcare students can shadow or assist at
+                                    local free clinics as part of community placement hours. Search for clinics near
+                                    your university.</span>
+                            </li>
+                            <hr>
+                            <li>
+                                <span><strong>Donate supplies</strong> — Clinics regularly need bandages, blood pressure
+                                    cuffs, hygiene products, and over-the-counter medications. Check what your local
+                                    clinic needs before donating.</span>
+                            </li>
+                            <hr>
+                            <li>
+                                <span><strong>Spread awareness</strong> — Many people who need free clinics do not know
+                                    they exist. Share information via social media, flyers, or community
+                                    noticeboards.</span>
+                            </li>
+                            <hr>
+                            <li>
+                                <span><strong>Fundraise</strong> — Organise a charity run, bake sale, or online
+                                    fundraiser to help fund a local clinic's operating costs. Even small amounts cover
+                                    vital prescription costs.</span>
+                            </li>
+                            <hr>
+                            <li>
+                                <span><strong>Lobby for policy change</strong> — Contact your local MP or councillor to
+                                    advocate for increased NHS funding for community health initiatives and free clinic
+                                    support.</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- ── SECTION 6: Student Role ── -->
+                    <section class="section-card" id="student-role">
+                        <h2 id="subtopic6">
+                            <svg class="section-icon" width="32" height="32">
+                                <circle cx="16" cy="16" r="16" fill="#EFF7F6" />
+                                <rect x="13" y="7" width="6" height="18" rx="3" fill="#3d6b72" />
+                                <rect x="7" y="13" width="18px" height="6px" rx="3px" fill="#3d6b72" />
+                            </svg>
+                            The Student Role in Free Healthcare
+                        </h2>
+                        <div class="section-divider"></div>
+
+                        <p>
+                            University students — particularly those studying medicine, nursing, pharmacy, social work,
+                            and public health — have a unique and powerful opportunity to contribute to free clinics.
+                            Many student-run free clinics around the world are led almost entirely by medical students
+                            under physician supervision.
+                        </p>
+
+                        <img src="Medical students run clinic.png" id="image" />
+                        <p class="img-caption">Medical students at a student-run free clinic gain real clinical
+                            experience while serving the community.</p>
+
+                        <h4>Why Students Should Care</h4>
+                        <ul class="ul-list">
+                            <li>Gain <strong>real-world clinical experience</strong> not available in lecture halls.
+                            </li>
+                            <li>Develop empathy and patient communication skills by working with diverse, underserved
+                                populations.</li>
+                            <li>Strengthen your CV with meaningful, verifiable volunteer experience that admissions
+                                committees and employers value.</li>
+                            <li>Contribute to <strong>SDG 3</strong> — a global goal that directly aligns with a future
+                                career in healthcare.</li>
+                            <li>Build community connections and networks with established medical professionals.</li>
+                        </ul>
+
+                        <div class="callout">
+                            🎓 The <strong>University of Westminster</strong> encourages students to engage with SDG 3
+                            through community placements, volunteering, and research into health inequalities. Ask your
+                            department about supported volunteer opportunities at free clinics.
+                        </div>
+                    </section>
+
+                    <!-- ── SECTION 7: Challenges ── -->
+                    <section class="section-card" id="challenges" aria-labelledby="h-challenges">
+                        <h2 id="subtopic7">
+                            <svg class="section-icon" width="32" height="32">
+                                <circle cx="16" cy="16" r="16" fill="#EFF7F6" />
+                                <rect x="13" y="7" width="6" height="18" rx="3" fill="#3d6b72" />
+                                <rect x="7" y="13" width="18px" height="6px" rx="3px" fill="#3d6b72" />
+                            </svg>
+                            Challenges Faced by Free Clinics
+                        </h2>
+                        <div class="section-divider"></div>
+
+                        <p>
+                            Despite their crucial role, free clinics operate in a challenging environment. Understanding
+                            these obstacles helps us better appreciate and support the people running them.
+                        </p>
+
+                        <h4>Funding Instability</h4>
+                        <p>
+                            Free clinics rely almost entirely on donations, grants, and charitable funding. This creates
+                            uncertainty — a clinic that serves 500 patients per month could be forced to reduce services
+                            or close entirely if a key funder withdraws. Sustainable long-term funding remains the
+                            single greatest challenge.
+                        </p>
+
+                        <h4>Volunteer Burnout</h4>
+                        <p>
+                            Many clinic volunteers are already working full-time jobs in the health system. Donating
+                            additional hours requires significant personal sacrifice, and burnout is a genuine risk.
+                            Retaining skilled volunteers over time is an ongoing struggle for clinic administrators.
+                        </p>
+
+                        <h4>Limited Referral Pathways</h4>
+                        <p>
+                            When a free clinic identifies a condition that requires specialist treatment — surgery,
+                            cancer care, advanced imaging — referring patients to secondary care who cannot afford it
+                            remains deeply problematic. Bridging this gap is a systemic issue that free clinics alone
+                            cannot solve.
+                        </p>
+
+                        <h4>Stigma and Awareness</h4>
+                        <p>
+                            Some community members feel embarrassed to use free services, or are simply unaware that
+                            high-quality free healthcare exists nearby. Outreach and community engagement are essential
+                            — but time-consuming — work for clinic staff.
+                        </p>
+                    </section>
+
+                    <!-- ── SECTION 8: SDG Connection ── -->
+                    <section class="section-card" id="sdg-connection" aria-labelledby="h-sdg">
+                        <h2 id="subtopic8">
+                            <svg class="section-icon" width="32" height="32">
+                                <circle cx="16" cy="16" r="16" fill="#EFF7F6" />
+                                <rect x="13" y="7" width="6" height="18" rx="3" fill="#3d6b72" />
+                                <rect x="7" y="13" width="18px" height="6px" rx="3px" fill="#3d6b72" />
+                            </svg>
+                            Connection to SDG 3
+                        </h2>
+                        <div class="section-divider"></div>
+
+                        <p>
+                            The United Nations Sustainable Development Goal 3 — <strong>Good Health and
+                                Well-Being</strong> — calls for universal access to quality healthcare services,
+                            medicines, and vaccines for all people, regardless of their economic status or location.
+                            Free clinics are one of the most direct, community-level implementations of this goal.
+                        </p>
+
+                        <h4>SDG 3 Targets Addressed by Free Clinics</h4>
+                        <ul class="ul-list">
+                            <li><strong>Target 3.8</strong> — Achieve Universal Health Coverage, including financial
+                                risk protection and access to quality essential healthcare services.</li>
+                            <li><strong>Target 3.4</strong> — Reduce premature mortality from non-communicable diseases
+                                through prevention and treatment.</li>
+                            <li><strong>Target 3.b</strong> — Support research and development of affordable medicines
+                                and vaccines for developing and underserved nations.</li>
+                            <li><strong>Target 3.c</strong> — Substantially increase the health workforce in developing
+                                countries through training, recruitment, and retention.</li>
+                        </ul>
+
+                        <div class="callout">
+                            "Leaving no one behind is not a slogan — it is a moral obligation. Free clinics embody this
+                            principle every day, in every neighbourhood."
+                            <span>— <em>UN Sustainable Development Goals Report, 2024</em> —</span>
+                        </div>
+
+                        <p>
+                            By supporting, volunteering at, and advocating for free clinics, each of us — regardless of
+                            our career path — becomes an active participant in achieving SDG 3. The goal is not distant
+                            or abstract: it is happening in your city, your community, and potentially your university
+                            right now.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+
+<footer>
+    <ul class="social_icon">
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+
+    <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="ais.html">AIS</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="profile.html">User Profile</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+    </ul>
+    <p>&copy; 2026 HEALIX &mdash; All Rights Reserved</p>
+</footer>
+
+</html>
